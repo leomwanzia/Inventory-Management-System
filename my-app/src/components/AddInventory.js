@@ -1,9 +1,17 @@
 import { Form, Button, Table} from "react-bootstrap"
-import { useState, createRef } from "react";
+import { useState, createRef, useEffect } from "react";
+import axios from "axios";
 
-export default function AddProduct() {
+export default function AddProduct() { 
 
 let initialValue = [];
+// const products1 = []
+
+// useEffect(
+//   response = axios.get("")
+// )
+
+
 const [products, setProduct] = useState(initialValue);
 const formData = createRef();
 const increIndex = createRef();
@@ -58,8 +66,11 @@ const decreQuantity = (event)=>{
                     <Form.Control type="number" placeholder="How many: quantity" name="quantity"/>
             </Form.Group>
 
-            <Button variant="primary" type="submit">Add to Inventory</Button>
+            <Button className="add" variant="primary" type="submit">Add Inventory</Button>
+
         </Form>
+
+        <Button className="view" variant="primary" type="submit">View Inventory</Button>
 
     <Table striped bordered hover variant="dark">
         <thead>
@@ -78,7 +89,7 @@ const decreQuantity = (event)=>{
                     products.map((item, index)=>{
                         return(
                         <tr key={index}>
-                            <td>{index}</td>
+                            <td>{index + 1}</td>
                             <td>{item.product_name}</td>
                             <td>{item.price}</td>
                             <td>{item.quantity}</td>
