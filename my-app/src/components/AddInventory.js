@@ -2,28 +2,15 @@ import { Form, Button, Table} from "react-bootstrap"
 import { useState, createRef, useEffect } from "react";
 import axios from "axios";
 
+
 export default function AddProduct() { 
 
 let initialValue = [];
-// const products1 = []
-
-// useEffect(
-//   response = axios.get("")
-// )
-
-
 const [products, setProduct] = useState(initialValue);
 const formData = createRef();
 const increIndex = createRef();
 const addProduct = (event) =>{
 event.preventDefault();
-// console.log(event);
-// const formData = event.target;
-// const newProduct = {
-// product_name: formData.product_name.value,
-// price: formData.price.value,
-// quantity: formData.quantity.value
-// }
 
 const newProduct = {
     product_name: formData.current.product_name.value,

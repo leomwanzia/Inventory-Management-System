@@ -9,6 +9,7 @@ function App() {
       <h1>Inventory Management System</h1>
 
       <AddProduct/>
+      
       </header>
     </div>
   );
